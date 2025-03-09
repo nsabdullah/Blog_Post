@@ -82,5 +82,33 @@ function delet_post($post_id){
 
 
 
+// update post
+function update_post($post_id, array $data){
+  global $conn;
+
+  $title = $data['title'];
+  $content = $data['content'];
+
+  $update_query = "UPDATE posts SET title='$title', content = '$content'  WHERE id=1";
+  $query_execution = mysqli_query($conn, $update_query);
+
+  
+  if ( ! $query_execution ) {
+		die( mysqli_error( $conn ) ); // Outputs the error if the query fails
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
