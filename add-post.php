@@ -1,23 +1,18 @@
 <?php
-$request_mathod = $_SERVER['REQUEST_METHOD'];
- 
+$request_method = $_SERVER['REQUEST_METHOD'];
+//check if the form is submitted with post request
 
- 
- if($request_mathod == 'POST'){
-   
-   include('inc/database.php');
-	 
-   $submit_post = insert_data();
-  }
+$submit_post = false;
 
+if ( $request_method == 'POST' ) {
 
+	include( 'inc/database.php' );
 
+	$submit_post = insert_post();
 
-
+}
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 

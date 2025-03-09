@@ -49,7 +49,7 @@ include ('inc/database.php');
 					<h3 class="text-lg font-semibold mb-2"> <?php  echo $post['title']  ?> </h3>
 					<p class="text-gray-600"><?php  echo substr($post['content'], 0, 60 ) ?></p>
 					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
+						<a href="single_post.php?id=<?php $post['id'] ?>" class="text-blue-600">Read More</a>
 						<div>
 							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
 							<a href="#" class="text-red-600">Delete</a>

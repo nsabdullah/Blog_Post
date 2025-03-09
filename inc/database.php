@@ -51,19 +51,19 @@ function insert_data(){
     return true;
   }
   return false;
-
-
-
-
-
-
-
-
 }
 
 
 
+//read single post
 
+function get_post_by_id($post_id){
+  global $conn;
+ 
+  $query = "SELECT * FROM posts WHERE id=$post_id ";
+  $result = mysqli_query($conn, $query);
+   return $result;
+}
 
 
 
