@@ -1,7 +1,10 @@
 <?php
 include( 'inc/database.php' );
 // get id from url
-$current_id = $_GET['id'];
+$current_id = $_GET['id'];  
+
+ 
+
 
 $result = get_post_by_id( $current_id );
 

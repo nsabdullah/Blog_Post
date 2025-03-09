@@ -28,7 +28,7 @@ function get_posts(){
 
 
 // insert data
-function insert_data(){
+function insert_post(){
   global $conn;
 
   $post_title = $_POST['title'];
@@ -60,7 +60,7 @@ function insert_data(){
 function get_post_by_id($post_id){
   global $conn;
  
-  $query = "SELECT * FROM posts WHERE id=$post_id ";
+  $query = "SELECT * FROM posts WHERE id=$post_id";
   $result = mysqli_query($conn, $query);
    return $result;
 }
@@ -68,7 +68,17 @@ function get_post_by_id($post_id){
 
 
 
+// delet post
 
+function delet_post($post_id){
+  global $conn;
+  $query = "DELETE  FROM posts WHERE id=$post_id";
+  $result = mysqli_query($conn, $query);
+  if($result){
+    return true;
+  }
+  return false;
+}
 
 
 
