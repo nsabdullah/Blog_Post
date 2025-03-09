@@ -1,9 +1,6 @@
 <?php
 include ('inc/database.php');
 
-print_r( get_post());
-
-
 
 ?>
 
@@ -40,11 +37,17 @@ print_r( get_post());
 
 		<!-- All Posts Grid -->
 		<div class="grid grid-cols-3 gap-6">
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
+
+       <?php
+			  $posts = get_posts();
+				while ( $post = mysqli_fetch_assoc( $posts ) ) { ?>
+
+
+	 		<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+				<img src="image/<?php echo $post['futuread_image']  ?>" alt="Post Image" class="w-full h-48 object-cover">
 				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
+					<h3 class="text-lg font-semibold mb-2"> <?php  echo $post['title']  ?> </h3>
+					<p class="text-gray-600"><?php  echo substr($post['content'], 0, 60 ) ?></p>
 					<div class="mt-4 flex justify-between">
 						<a href="single.php" class="text-blue-600">Read More</a>
 						<div>
@@ -54,76 +57,17 @@ print_r( get_post());
 					</div>
 				</div>
 			</div>
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
-					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
-						<div>
-							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
-							<a href="#" class="text-red-600">Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
-					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
-						<div>
-							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
-							<a href="#" class="text-red-600">Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
-					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
-						<div>
-							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
-							<a href="#" class="text-red-600">Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
-					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
-						<div>
-							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
-							<a href="#" class="text-red-600">Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img src="https://picsum.photos/300" alt="Post Image" class="w-full h-48 object-cover">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold mb-2">Post Title</h3>
-					<p class="text-gray-600">Short description of the post...</p>
-					<div class="mt-4 flex justify-between">
-						<a href="single.php" class="text-blue-600">Read More</a>
-						<div>
-							<a href="edit.php" class="text-yellow-600 px-2">Edit</a>
-							<a href="#" class="text-red-600">Delete</a>
-						</div>
-					</div>
-				</div>
-			</div>
+
+
+
+
+				<?php
+				}
+			  ?>
+
+
+	
+
 		</div>
 	</main>
 
@@ -131,6 +75,13 @@ print_r( get_post());
 	<footer class="bg-white shadow-md mt-6 py-4 text-center">
 		<p>&copy; 2024 My Blog. All rights reserved.</p>
 	</footer>
-</body>
 
+
+
+
+
+
+
+	<!-- localhost/Blog_Post -->
+</body>
 </html>
