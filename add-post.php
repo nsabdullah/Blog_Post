@@ -10,6 +10,10 @@ if ( $request_method == 'POST' ) {
 
 	$submit_post = insert_post();
 
+	if($submit_post){
+		header('location: index.php');
+	}
+
 }
 
 ?>
@@ -44,7 +48,7 @@ if ( $request_method == 'POST' ) {
 		<div class="bg-white shadow-lg rounded-lg p-6 max-w-lg mx-auto">
 			<form action="" method="POST" enctype= "multipart/form-data">
 				<label class="block mb-2 font-medium">Title:</label>
-				<input type="text" name="title" class="w-full border border-gray-300 p-2 rounded mb-4" required>
+				<input type="text" name="title" class="w-full border border-gray-300 p-2 rounded mb-4" required> 
 
 				<label class="block mb-2 font-medium">Content:</label>
 				<textarea name="content" class="w-full border border-gray-300 p-2 rounded mb-4" rows="5"
@@ -53,7 +57,7 @@ if ( $request_method == 'POST' ) {
 				<label class="block mb-2 font-medium">Featured Image:</label>
 				<input type="file" name = "futuread_image" class="w-full border border-gray-300 p-2 rounded mb-4">
 
-				<button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Submit</button>
+				<button type="submit"  class="bg-blue-600 text-white px-4 py-2 rounded w-full">Submit</button>
 			</form>
 		</div>
 	</main>
