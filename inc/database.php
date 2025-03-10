@@ -54,7 +54,6 @@ function insert_post(){
 }
 
 
-
 //read single post
 
 function get_post_by_id($post_id){
@@ -64,10 +63,6 @@ function get_post_by_id($post_id){
   $result = mysqli_query($conn, $query);
    return $result;
 }
-
-
-
-
 // delet post
 
 function delet_post($post_id){
@@ -79,8 +74,6 @@ function delet_post($post_id){
   }
   return false;
 }
-
-
 
 // update post
 function update_post($post_id, array $data){
@@ -98,17 +91,4 @@ function update_post($post_id, array $data){
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
