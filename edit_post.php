@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POSt'){
 			</a>
 			<nav>
 				<a href="index.php" class="text-blue-600 px-3">Home</a>
-				<a href="add.php" class="text-blue-600 px-3">Add Post</a>
+				<a href="add-post.php" class="text-blue-600 px-3">Add Post</a>
 			</nav>
 		</div>
 	</header>
@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POSt'){
 
 				<label class="block mb-2 font-medium">Content:</label>
 				<textarea name="content" class="w-full border border-gray-300 p-2 rounded mb-4" rows="5"
-					required ><?php echo $current_post['content']; ?></textarea>
+					required = "" > <?php echo $current_post['content']; ?> </textarea>
 
 				<label class="block mb-2 font-medium">Featured Image:</label>
 				<input type="file" class="w-full border border-gray-300 p-2 rounded mb-4">
