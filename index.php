@@ -51,7 +51,7 @@ include ('inc/database.php');
 					<div class="mt-4 flex justify-between">
 						<a href="single_post.php?id= <?php echo $post['id']; ?>" class="text-blue-600">Read More</a>
 						<div>
-							<a href="edit_post.php?id=<?php echo $post['id']  ?>" class="text-yellow-600 px-2">Edit</a>
+							<a href="edit_post.php?id=<?php echo $post['id'];  ?>" class="text-yellow-600 px-2">Edit</a>
 							<a href="delet.php?id=<?php echo $post['id']  ?>" class="text-red-600">Delete</a>
 						</div>
 					</div>
