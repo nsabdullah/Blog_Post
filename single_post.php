@@ -3,11 +3,7 @@ include( 'inc/database.php' );
 // get id from url
 $current_id = $_GET['id'];  
 
- 
-
-
 $result = get_post_by_id( $current_id );
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +33,7 @@ $result = get_post_by_id( $current_id );
   <?php
    while($post = mysqli_fetch_assoc($result)){ ?>
 
-	<div class="max-w-[1140px] mx-auto p-6 min-h-screen">
+	<div class="max-w-[600px] mx-auto p-6 min-h-screen  ">
 		<!-- Featured Image -->
 		<div class="mb-10 overflow-hidden rounded-lg shadow-lg">
 			<img src="<?php echo $post['futuread_image'];   ?>" alt="Featured Image"
